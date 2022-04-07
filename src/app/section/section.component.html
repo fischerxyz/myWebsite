@@ -1,0 +1,33 @@
+<div style="display: flex; margin: 32px; font-size: 1.2em;" >
+  <div class="wrapper">
+    <span class="material-icons">
+      date_range
+    </span>
+    <div class="content">
+      {{startDate}}
+    </div>
+    <div *ngIf="endDate != ''" class="content">
+        -  
+    </div>
+    <div *ngIf="endDate != ''" class="content">
+      {{endDate}}
+    </div>
+  </div>
+  <div class="wrapper">
+    <span class="material-icons">
+      description
+    </span>
+    <div class="content">
+      {{description}}
+    </div>
+  </div>
+  <div *ngIf="location != ''" class="wrapper">
+    <span class="material-icons">
+      place
+    </span>
+    <div class="content">
+      {{location}}
+    </div>
+  </div>
+  
+</div>

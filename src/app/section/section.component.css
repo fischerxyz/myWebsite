@@ -1,0 +1,8 @@
+.content {
+    align-self: center;
+}
+
+.wrapper {
+    display: flex;
+    margin: 0px 16px;
+}
