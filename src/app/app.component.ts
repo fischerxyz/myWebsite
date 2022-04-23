@@ -6,14 +6,18 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Davids-Website';
-
+  title = "Davids-Website";
+  figureHeight: any = "0px";
+  figureWidth: any = "0px";
 
   ngOnInit(): void {
     //window.scrollTo(0, 0);  
     var displayResultionX = window.innerHeight;
 
     var containers = Array.prototype.slice.call(document.getElementsByClassName("container"));
+
+    this.figureHeight = displayResultionX / 23 * 10 + 'px';   
+    this.figureWidth = this.figureHeight / 6 * 5 + 'px';   
 
     for(var i = 0; i < containers.length; i++){
       //Height = Resolution - Padding - Borderradius
@@ -53,11 +57,10 @@ export class AppComponent implements OnInit {
           var position = width/(clientHeight/(scrollbarPosition - i * clientHeight)) - 20;
           images[i].style.left = position + 'px';
         }
-        console.log(images[i].style.visibility != 'visible')
         if(containers[i].style.visibility != 'visible'){
           containers[i].animate([
             // keyframes
-            { transform: 'translateX(2000px)' },
+            { transform: 'translateX(' + window.innerWidth + 'px)' },
             { transform: 'translateX(0px)' }
           ], {
             // timing options
@@ -74,7 +77,7 @@ export class AppComponent implements OnInit {
           containers[i].animate([
             // keyframes
             { transform: 'translateX(0px)' },
-            { transform: 'translateX(-2000px)' }
+            { transform: 'translateX(-' + window.innerWidth + 'px)' },
           ], {
             // timing options
             duration: 1000,
