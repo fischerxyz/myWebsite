@@ -1,4 +1,4 @@
-.image {
+.social {
     width: 24px;
     height: 24px;
 
@@ -6,7 +6,7 @@
     float: left;
 }
 
-.image:hover {
+.social:hover {
     width: 32px;
     height: 32px;
 

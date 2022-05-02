@@ -7,8 +7,13 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = "Davids-Website";
-  figureHeight: any = "0px";
-  figureWidth: any = "0px";
+  figureHeight: string = "0px";
+  figureWidth: string = "0px";
+
+  emblemHeight: string = "0px";
+  emblemWidth: string = "0px";
+
+  isAnimation: boolean = false;
 
   ngOnInit(): void {
     //window.scrollTo(0, 0);  
@@ -17,13 +22,25 @@ export class AppComponent implements OnInit {
     var containers = Array.prototype.slice.call(document.getElementsByClassName("container"));
 
     this.figureHeight = displayResultionX / 23 * 10 + 'px';   
-    this.figureWidth = this.figureHeight / 6 * 5 + 'px';   
+    this.figureWidth = displayResultionX / 23 * 10 / 6 * 5 + 'px';  
+    
+    this.emblemHeight = displayResultionX / 23 * 5 + 'px';   
+    this.emblemWidth = displayResultionX / 23 * 5 / 6 * 5 + 'px';  
 
     for(var i = 0; i < containers.length; i++){
       //Height = Resolution - Padding - Borderradius
-      containers[i].style.height = displayResultionX - 32 + 'px';     
+      containers[i].addEventListener("webkitAnimationStart", () => {
+        this.isAnimation = true;
+        console.log("animation")
+      });
+      containers[i].addEventListener("webkitAnimationEnd", () => {
+        this.isAnimation = false;
+        console.log("animationend")
+      });
+      containers[i].style.height = displayResultionX - 48 + 'px';     
     }
   }
+  
 
   @HostListener("window:scroll", []) onScroll() {
     // do some stuff here when the window is scrolled
@@ -57,7 +74,7 @@ export class AppComponent implements OnInit {
           var position = width/(clientHeight/(scrollbarPosition - i * clientHeight)) - 20;
           images[i].style.left = position + 'px';
         }
-        if(containers[i].style.visibility != 'visible'){
+        if(containers[i].classList.contains('invisible')){
           containers[i].animate([
             // keyframes
             { transform: 'translateX(' + window.innerWidth + 'px)' },
@@ -67,14 +84,14 @@ export class AppComponent implements OnInit {
             duration: 1000,
             iterations: 1
           });
-          containers[i].style.visibility = 'visible';
-          containers[i].style.position = 'fixed';
+          containers[i].classList.add('visible');
+          containers[i].classList.remove('invisible');
         }   
       }
       else{
         images[i].style.left = 0 + 'px';
-        if(containers[i].style.visibility != 'hidden'){
-          containers[i].animate([
+        if(containers[i].classList.contains('visible')){
+          /* containers[i].animate([
             // keyframes
             { transform: 'translateX(0px)' },
             { transform: 'translateX(-' + window.innerWidth + 'px)' },
@@ -82,9 +99,9 @@ export class AppComponent implements OnInit {
             // timing options
             duration: 1000,
             iterations: 1
-          });
-          containers[i].style.visibility = 'hidden'; 
-          containers[i].style.position = 'static';
+          });*/
+          containers[i].classList.add('invisible');
+          containers[i].classList.remove('visible');
         }
 
       }

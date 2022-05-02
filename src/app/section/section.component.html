@@ -1,4 +1,4 @@
-<div style="display: flex; margin: 32px; font-size: 1.2em;" >
+<div style="display: flex; margin: 32px; font-size: 1.4em;" >
   <div class="wrapper">
     <span class="material-icons">
       date_range
@@ -13,7 +13,7 @@
       {{endDate}}
     </div>
   </div>
-  <div class="wrapper">
+  <div *ngIf="description != ''" class="wrapper">
     <span class="material-icons">
       description
     </span>

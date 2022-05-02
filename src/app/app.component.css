@@ -4,7 +4,7 @@ main {
 }
   
 .container {
-    position: static;
+    background-size: cover;
     aspect-ratio: 18 / 9;
     left: 0;
     right: 0;
@@ -12,15 +12,29 @@ main {
     top: 10px;
     bottom: 10px;
 
-    visibility: hidden;
     border-radius: 6px;
     border: 4px solid black;
+}
+.visible {
+    visibility: visible; 
+    position: fixed;
+}
+
+.invisible {
+    visibility: hidden; 
+    position: static;
 }
 
 .image {
     position: absolute;
     bottom: 20px;
     left: 20px;
+}
+
+.emblem {
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
 .centeredText{
@@ -31,13 +45,10 @@ main {
 }
 
 .float{
-	position:fixed;
+    position: absolute;
+    margin-left: 12px;
 	top:40px;
 	left:40px;
     height: 64px;
 }
 
-@keyframes invisible {
-    from {left: 10px; right: 10px}
-    to {left: -200px; right: 200px}
-  }
