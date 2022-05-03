@@ -15,6 +15,7 @@ main {
     border-radius: 6px;
     border: 4px solid black;
 }
+
 .visible {
     visibility: visible; 
     position: fixed;
@@ -52,3 +53,41 @@ main {
     height: 64px;
 }
 
+dialog[open] {
+    width: 20em; 
+    background: #ffffff; 
+    border: 2px solid #222222;
+    margin: 5em auto;
+}
+
+dialog:not([open]) {
+    display: none;
+}
+
+dialog::backdrop { 
+    background: rgba(202, 202, 202, 0.5) ;
+}
+
+.closeDialogButton{
+   float: right;
+}
+
+.btn-borderless{
+    color:rgba(202, 202, 202, 1);
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.btn-borderless:hover{
+    cursor: pointer;
+    color:rgba(0, 0, 0, 1);
+}
+
+.inputLabel{
+    margin-block-end: 0.1em;
+}
+
+.input{
+    width: 100%;
+}

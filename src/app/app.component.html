@@ -1,14 +1,14 @@
 <div id="main" style=" scroll-behavior: smooth;">
   <div class="container visible" style="background-image: url('assets/images/high-resolution/Background_1.png');"> 
     <div class="float">
-      <social></social>
+      <social (openEmailDialog)="openEmailDialog()"></social>
      </div>
     <h1 class="centeredText">Willkommen zu Davids Website</h1>
     <img class="image" src="assets\images\high-resolution\512-David_Normal-001.png" alt="David Normal" [attr.width]="figureWidth" [attr.height]="figureHeight">
   </div>
   <div class="container invisible" style="background-image: url('assets/images/high-resolution/Background_School.png');" > 
     <div class="float">
-      <social></social>
+      <social (openEmailDialog)="openEmailDialog()"></social>
      </div>
     <h1 class="centeredText">Schule</h1>
     <section startDate="09/2008" endDate="07/2016" description="Abitur" location="Platen-Gymnasium Ansbach"></section>
@@ -16,7 +16,7 @@
   </div>
   <div class="container invisible" style="background-image: url('assets/images/high-resolution/Background_Siemens.png');"> 
     <div class="float">
-      <social></social>
+      <social (openEmailDialog)="openEmailDialog()"></social>
      </div>
     <h1 class="centeredText">Ausbildung</h1>
     <section startDate="09/2017" endDate="02/2020" description="Associate Engineer Information Technology inkl. Fachinformatiker 
@@ -25,7 +25,7 @@
   </div>
   <div class="container invisible" style="background-image: url('assets/images/high-resolution/Background_SiemensWork.png');"> 
     <div class="float">
-      <social></social>
+      <social (openEmailDialog)="openEmailDialog()"></social>
      </div>
     <h1 class="centeredText">Berufliche Laufbahn</h1>
     <section startDate="02/2020" endDate="heute" description="Software Engineer" location="Siemens AG"></section>
@@ -33,7 +33,7 @@
   </div>
   <div class="container invisible" style="background-image: url('assets/images/high-resolution/Background_2.png');"> 
     <div class="float">
-      <social></social>
+      <social (openEmailDialog)="openEmailDialog()"></social>
      </div>
     <h1 class="centeredText">Lehrgänge</h1>
     <section startDate="11/2019" description="Sanitätsdienstausbildung" location="Bayerisches Rotes Kreuz"></section>
@@ -44,7 +44,7 @@
   </div>
   <div class="container invisible" style="background-image: url('assets/images/high-resolution/Background_Football.png'); "> 
     <div class="float">
-      <social></social>
+      <social (openEmailDialog)="openEmailDialog()"></social>
      </div>
     <h1 class="centeredText">Fußball</h1>
     <section startDate="2005" location="1.FC Sachsen"></section>
@@ -53,15 +53,41 @@
   </div>
   <div class="container invisible" style="background-image: url('assets/images/high-resolution/Background_Firefighter.png'); "> 
     <div class="float">
-      <social></social>
+      <social (openEmailDialog)="openEmailDialog()"></social>
      </div>
     <h1 class="centeredText">Feuerwehr</h1>
     <section startDate="2016" location="FFW Sachsen bei Ansbach"></section>
     <img class="emblem" src="assets\images\high-resolution\FFW-Sachsen.png" alt="David Normal" [attr.width]="emblemWidth" [attr.height]="emblemHeight">
     <img class="image" src="assets\images\high-resolution\512-David_Firefighter-001.png" alt="David Normal" [attr.width]="figureWidth" [attr.height]="figureHeight">
   </div>
-
-
 </div>
 
+<!-- The Modal -->
+<dialog id="emailDialog">
+  <button class="btn-borderless closeDialogButton" (click)="closeEmailDialog()">X</button>
+  <div>
+    <h1 class="centeredText" style="margin-block: 0.5em;">Kontakt</h1>
+    <div style="padding: 0px 16px">
+      <form [formGroup]="FormData" (ngSubmit)="sendEmail(FormData.value)">
+        
+          <p class="inputLabel">Email</p>
+          <input type="email" class="input" name="Email" placeholder="Email" formControlName="email">
+   
+         
+          <p  class="inputLabel">Name</p>
+          <input type="text" class="input" name="Fullname" placeholder="Name" formControlName="name">
+       
+          <p class="inputLabel">Nachricht</p>
+          <textarea class="input" style="height: 180px" formControlName="message" name="Message">
+          </textarea>
+          <p>
+            <button type="submit" class="btn btn-primary" [disabled]="!FormData.valid">Submit</button>
+          </p>
+        
+      </form>
+    </div>
+  </div>
+</dialog>
+
+ 
 <router-outlet></router-outlet>

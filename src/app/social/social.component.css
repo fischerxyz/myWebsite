@@ -20,8 +20,9 @@ a {
 }
 
 .flexContainer{
-    width: 64px;
+    width: 96px;
     height: 64px;
     display: flex;
     justify-content: center;
 }
+

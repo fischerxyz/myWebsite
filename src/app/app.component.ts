@@ -1,4 +1,6 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, HostListener, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +17,52 @@ export class AppComponent implements OnInit {
 
   isAnimation: boolean = false;
 
+  FormData: FormGroup;
+
+  constructor(private builder: FormBuilder, private http: HttpClient) {
+    this.FormData = this.builder.group({
+      name: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required]),
+      message: new FormControl('', [Validators.required])
+    })
+  } 
+
+  onSubmit(data:any){
+
+  }
+  
+  openEmailDialog(){
+    console.log("open")
+    var modal = document.getElementById("emailDialog") as any;
+    if(modal != null){
+      modal.showModal();
+    }
+  }
+
+  closeEmailDialog(){
+    console.log("close")
+    var modal = document.getElementById("emailDialog") as any;
+    if(modal != null){
+      modal.close();
+    }
+  }
+
+  sendEmail(formData: any){
+    console.log("Send")
+    console.log(formData)
+    var url  = "https://mailthis.to/davidfischer081998@gmail.com";
+    const headers = new HttpHeaders().set('Content-Type', 'multipart/form-data;');
+    
+    this.http.post(url, formData, {headers: headers}).subscribe(response => {
+      console.log(response);
+      this.closeEmailDialog();
+    }, error => {
+      console.log("Error");
+      console.log(error);
+    })
+  }
+
+  
   ngOnInit(): void {
     //window.scrollTo(0, 0);  
     var displayResultionX = window.innerHeight;

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'social',
@@ -6,6 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./social.component.css']
 })
 export class SocialComponent implements OnInit {
+  @Output() openEmailDialog = new EventEmitter<boolean>();
+  
+  openModalEmail(){
+    this.openEmailDialog.emit(true);
+  }
+  
   ngOnInit(): void {
+    
   }
 }
+
+
+
