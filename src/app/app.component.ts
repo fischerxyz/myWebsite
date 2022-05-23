@@ -15,6 +15,12 @@ export class AppComponent implements OnInit {
   emblemHeight: string = "0px";
   emblemWidth: string = "0px";
 
+  hvoEmblemHeight: string = "0px";
+  hvoEmblemWidth: string = "0px";
+
+  scrollbarPosition: number = 0;
+  isBackward: boolean = false;
+
   isAnimation: boolean = false;
 
   FormData: FormGroup;
@@ -75,6 +81,9 @@ export class AppComponent implements OnInit {
     this.emblemHeight = displayResultionX / 23 * 5 + 'px';   
     this.emblemWidth = displayResultionX / 23 * 5 / 6 * 5 + 'px';  
 
+    this.hvoEmblemHeight = displayResultionX / 23 * 5 / 17 * 8 + 'px';   
+    this.hvoEmblemWidth = displayResultionX / 23 * 5 + 'px';  
+
     for(var i = 0; i < containers.length; i++){
       //Height = Resolution - Padding - Borderradius
       containers[i].addEventListener("webkitAnimationStart", () => {
@@ -96,13 +105,16 @@ export class AppComponent implements OnInit {
           || document.documentElement.scrollTop 
           || document.body.scrollTop || 0;
 
+    this.isBackward = scrollbarPosition < this.scrollbarPosition;
+    this.scrollbarPosition = scrollbarPosition;
+
     var displayHeight = window.innerHeight;
     var page = document.getElementById("main");
     var height = page?.offsetHeight;
     var width = page?.offsetWidth;
 
     if(height != null){
-      height = height - displayHeight + 40;
+      height = height - displayHeight + 20;
     }
    
     var containers = Array.prototype.slice.call(document.getElementsByClassName("container"));
@@ -119,7 +131,7 @@ export class AppComponent implements OnInit {
   
       if((scrollbarPosition >= i * clientHeight) && (scrollbarPosition < (i + 1) * clientHeight)){
         if(width != null){
-          var position = width/(clientHeight/(scrollbarPosition - i * clientHeight)) - 20;
+          var position = width/(clientHeight/(scrollbarPosition - i * clientHeight)) - 60;
           images[i].style.left = position + 'px';
         }
         if(containers[i].classList.contains('invisible')){

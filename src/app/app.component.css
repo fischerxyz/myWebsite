@@ -91,3 +91,44 @@ dialog::backdrop {
 .input{
     width: 100%;
 }
+
+.forward{
+    transform: scaleX(1);
+}
+
+.backward{
+    transform: scaleX(-1);
+}
+
+.football{
+    position: absolute;
+    bottom: 20px;
+    left: 24em;
+    height: 4em;
+    width: 4em;
+}
+
+.pulsate {
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-name: pulsate;
+    opacity: 0.7;
+    font-size: 1.2em;
+}
+
+@keyframes pulsate {
+    0%    {transform:scale(1);}
+    50%   {transform:scale(1.2);}
+    100%  {transform:scale(1);}     
+}
+
+.fade-in {
+    animation-duration: 4s;
+    animation-name: fade-in;
+    opacity: 0.8;
+}
+
+@keyframes fade-in {
+    0%    { opacity: 0.0;}
+    100%  { opacity: 0.8;}     
+}
