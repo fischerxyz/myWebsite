@@ -9,8 +9,6 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class AppComponent implements OnInit {
   title = "Davids-Website";
-  figureHeight: string = "0px";
-  figureWidth: string = "0px";
 
   emblemHeight: string = "0px";
   emblemWidth: string = "0px";
@@ -74,9 +72,6 @@ export class AppComponent implements OnInit {
     var displayResultionX = window.innerHeight;
 
     var containers = Array.prototype.slice.call(document.getElementsByClassName("container"));
-
-    this.figureHeight = displayResultionX / 23 * 10 + 'px';   
-    this.figureWidth = displayResultionX / 23 * 10 / 6 * 5 + 'px';  
     
     this.emblemHeight = displayResultionX / 23 * 5 + 'px';   
     this.emblemWidth = displayResultionX / 23 * 5 / 6 * 5 + 'px';  
@@ -118,7 +113,7 @@ export class AppComponent implements OnInit {
     }
    
     var containers = Array.prototype.slice.call(document.getElementsByClassName("container"));
-    var images = Array.prototype.slice.call(document.getElementsByClassName("image"));
+    var figures = Array.prototype.slice.call(document.getElementsByClassName("figure"));
 
     for(var i = 0; i < containers.length; i++){
       var clientHeight = 0;
@@ -132,7 +127,7 @@ export class AppComponent implements OnInit {
       if((scrollbarPosition >= i * clientHeight) && (scrollbarPosition < (i + 1) * clientHeight)){
         if(width != null){
           var position = width/(clientHeight/(scrollbarPosition - i * clientHeight)) - 60;
-          images[i].style.left = position + 'px';
+          figures[i].style.left = position + 'px';
         }
         if(containers[i].classList.contains('invisible')){
           containers[i].animate([
@@ -149,7 +144,7 @@ export class AppComponent implements OnInit {
         }   
       }
       else{
-        images[i].style.left = 0 + 'px';
+        figures[i].style.left = 0 + 'px';
         if(containers[i].classList.contains('visible')){
           /* containers[i].animate([
             // keyframes

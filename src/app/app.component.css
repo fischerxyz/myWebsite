@@ -9,11 +9,9 @@ main {
     left: 0;
     right: 0;
     margin: auto;
-    top: 10px;
-    bottom: 10px;
-
-    border-radius: 6px;
-    border: 4px solid black;
+    top: 1em;
+    bottom: 1em;
+    border: 8px solid black;
 }
 
 .visible {
@@ -26,10 +24,13 @@ main {
     position: static;
 }
 
-.image {
-    position: absolute;
-    bottom: 20px;
+.figure {
+    position: absolute;   
+    bottom: 6.2%;
     left: 20px;
+    z-index: 4;
+    height: 40%;
+    aspect-ratio: 5/6;
 }
 
 .emblem {
@@ -43,6 +44,7 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
+    z-index: 10;
 }
 
 .float{
@@ -102,7 +104,7 @@ dialog::backdrop {
 
 .football{
     position: absolute;
-    bottom: 20px;
+    bottom: 4em;
     left: 24em;
     height: 4em;
     width: 4em;
@@ -132,3 +134,49 @@ dialog::backdrop {
     0%    { opacity: 0.0;}
     100%  { opacity: 0.8;}     
 }
+
+.floor {
+    position: absolute;
+    width: 100%;
+    aspect-ratio: 32/1;
+    bottom: 0;
+    z-index: 3;
+}
+
+.background{
+    position: absolute;
+    width: 100%;
+    aspect-ratio: 32/15;
+    top: 0;
+}
+
+.clouds{
+    position: absolute;
+    width: 100%;
+    aspect-ratio: 32/15;
+    top: -6.5%;
+    opacity: 0.8;
+    background:url(../assets/images/clouds/cloud_1.png) repeat-x;
+    animation: clouds 100000s linear infinite;
+}
+
+.section{
+    position: relative;
+    z-index: 100;
+}
+
+.techstack{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 17%;
+}
+
+@keyframes clouds {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 10000000px 0;
+    }
+  }
