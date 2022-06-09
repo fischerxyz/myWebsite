@@ -1,11 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
-body{
-    background-color: grey;
-    font-family: 'VT323';   
+body{  
     max-width: 100%;
     overflow-x: hidden;  
+    margin: 0;
 }
 
-h1{
-    font-size: 4em;
+:root {
+    --main-bg-color: #6E6E6E;
+    --main-container-color: #303030;
+    --main-fg-color: #BCFD4C;
+    --main-bg-text-color: #FFFFFF;
+    --main-fg-text-color: #000000;
 }

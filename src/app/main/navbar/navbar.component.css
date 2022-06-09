@@ -1,0 +1,20 @@
+.navbar {
+    display: flex;
+    width: 100%;
+    flex-basis: auto;
+}
+
+.nav-list {
+    flex-direction: row;
+    margin-left: auto;
+    list-style: none;
+    display: flex;
+}
+
+.nav-item {
+    flex: auto;
+    padding: 1em;
+    font-size: 1.2em;
+    background-color: var(--main-fg-color);
+    color: var(--main-fg-text-color);
+}

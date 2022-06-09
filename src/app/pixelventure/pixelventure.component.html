@@ -1,0 +1,134 @@
+<div id="main" style=" scroll-behavior: smooth;">
+  <div class="container visible" style="background-color: aqua"> 
+    <img class="figure" src="assets\images\figures\normal.png" [ngClass]="isBackward ? 'backward' : 'forward'">
+    <img class="floor" src="assets\images\floors\outdoor.png">
+    <img class="background" src="assets\images\backgrounds\trees.png">
+    <div class="clouds"></div>
+
+    <div class="float"><social (openEmailDialog)="openEmailDialog()"></social></div>
+    <h1 class="centeredText">Willkommen zu Davids Website</h1>
+    <div class="fade-in"><h2 class="centeredText pulsate">Scrolle um dich zu bewegen</h2></div>
+  </div>
+  <!---------------------------------------------------------- Schule ------------------------------------------------------------------->
+  <div class="container invisible" style="background-color: aqua"> 
+    <img class="figure" src="assets\images\figures\school.png" [ngClass]="isBackward ? 'backward' : 'forward'">
+    <img class="floor" src="assets\images\floors\outdoor.png">
+    <img class="background" src="assets\images\backgrounds\school.png">
+    <div class="clouds"></div>
+
+    <div class="float"><social (openEmailDialog)="openEmailDialog()"></social></div>
+    <h1 class="centeredText">Schule</h1>
+    <section class="section" startDate="09/2008" endDate="07/2016" description="Abitur" location="Platen-Gymnasium Ansbach"></section>
+  </div>
+  <!-------------------------------------------------------- Ausbildung ----------------------------------------------------------------->
+  <div class="container invisible" style="background-color: antiquewhite;"> 
+    <img class="figure" src="assets\images\figures\siemens_1.png" [ngClass]="isBackward ? 'backward' : 'forward'">
+    <img class="floor" src="assets\images\floors\indoor_1.png">
+    <img class="background" src="assets\images\backgrounds\siemens_1.png">
+
+    <div class="float"><social (openEmailDialog)="openEmailDialog()"></social></div>
+    <h1 class="centeredText">Ausbildung</h1>
+    <section class="section" startDate="09/2017" endDate="02/2020" description="Associate Engineer Information Technology inkl. Fachinformatiker für Anwendungsentwicklung" location="Siemens AG"></section>
+  </div>
+  <!------------------------------------------------------------ Job --------------------------------------------------------------------->
+  <div class="container invisible" style="background-color: antiquewhite;"> 
+    <img class="figure" src="assets\images\figures\siemens_2.png" [ngClass]="isBackward ? 'backward' : 'forward'">
+    <img class="floor" src="assets\images\floors\indoor_2.png">
+    <img class="background" src="assets\images\backgrounds\siemens_2.png">
+
+    <div class="float"><social (openEmailDialog)="openEmailDialog()"></social></div>
+    <h1 class="centeredText">Berufliche Laufbahn</h1>
+    <section class="section" startDate="02/2020" endDate="heute" description="Software Engineer" location="Siemens AG"></section>
+  </div>
+  <!------------------------------------------------------- Techstack -------------------------------------------------------------------->
+  <div class="container invisible" style="background-color: antiquewhite;"> 
+    <img class="figure" src="assets\images\figures\siemens_1.png" [ngClass]="isBackward ? 'backward' : 'forward'">
+    <img class="floor" src="assets\images\floors\indoor_2.png">
+    <img class="background" src="assets\images\backgrounds\siemens_3.png">
+
+    <div class="float"><social (openEmailDialog)="openEmailDialog()"></social></div>
+    <h1 class="centeredText">Techstack</h1> 
+    <techstack class="techstack"></techstack>
+  </div>
+  <!------------------------------------------------------- Lehrgänge -------------------------------------------------------------------->
+  <div class="container invisible" style="background: aqua;"> 
+    <img class="figure" src="assets\images\figures\normal.png" [ngClass]="isBackward ? 'backward' : 'forward'">
+    <img class="floor" src="assets\images\floors\outdoor.png">
+    <div class="clouds"></div>
+
+    <div class="float"><social (openEmailDialog)="openEmailDialog()"></social></div>
+    <h1 class="centeredText">Lehrgänge</h1>
+    <section class="section" startDate="11/2019" description="Sanitätsdienstausbildung" location="Bayerisches Rotes Kreuz"></section>
+    <section class="section" startDate="05/2021" description="Professional Scrum Master I" location="scrum.org"></section>
+    <section class="section" startDate="09/2021" description="ISQTB Certified Tester Foundation Level"></section>
+    <section class="section" startDate="10/2021" description="ISQTB Certified Tester FL Extension – Agile Tester"></section>
+  </div>
+  <!---------------------------------------------------------- FCS ----------------------------------------------------------------------->
+  <div class="container invisible" style="background: aqua;"> 
+    <img class="figure" src="assets\images\figures\football.png" [ngClass]="isBackward ? 'backward' : 'forward'">
+    <img class="floor" src="assets\images\floors\outdoor.png">
+    <img class="background" src="assets\images\backgrounds\football.png">
+    <div class="clouds"></div>
+
+    <div class="float"><social (openEmailDialog)="openEmailDialog()"></social></div>
+    <h1 class="centeredText">Fußball</h1>
+    <section class="section" startDate="2005" location="1.FC Sachsen"></section>
+    <a href="https://www.1fc-sachsen.de/" target="_blank"><img class="emblem" src="assets\images\emblems\fcs.png" [attr.width]="emblemWidth" [attr.height]="emblemHeight"></a>
+  </div>
+  <!---------------------------------------------------------- FFW ----------------------------------------------------------------------->
+  <div class="container invisible" style="background-color: aqua;"> 
+    <img class="figure" src="assets\images\figures\firefighter.png" [ngClass]="isBackward ? 'backward' : 'forward'">
+    <img class="floor" src="assets\images\floors\street.png">
+    <img class="background" src="assets\images\backgrounds\ffw.png">
+    <div class="clouds"></div>
+
+    <div class="float"><social (openEmailDialog)="openEmailDialog()"></social></div>
+    <h1 class="centeredText">Feuerwehr</h1>
+    <section class="section" startDate="2016" location="FFW Sachsen bei Ansbach"></section>
+    <a href="https://ffwsachsen.de/" target="_blank"><img class="emblem" src="assets\images\emblems\ffw.png" [attr.width]="emblemWidth" [attr.height]="emblemHeight"></a>
+  </div>
+  <!---------------------------------------------------------- HvO ----------------------------------------------------------------------->
+  <div class="container invisible" style="background-color: aqua;"> 
+    <img class="figure" src="assets\images\figures\hvo.png" [ngClass]="isBackward ? 'backward' : 'forward'">
+    <img class="floor" src="assets\images\floors\street.png">
+    <img class="background" src="assets\images\backgrounds\hvo.png">
+    <div class="clouds"></div>
+
+    <div class="float"><social (openEmailDialog)="openEmailDialog()"></social></div>
+    <h1 class="centeredText">Helfer vor Ort</h1>
+    <section class="section" startDate="2017" location="HvO Sachsen bei Ansbach"></section>
+    <section class="section" startDate="2019" description="Sanitäter"></section>
+    <section class="section" startDate="2020" description="Verantwortlicher"></section>
+    <a href="https://www.hvo-sachsen.de/" target="_blank"><img class="emblem" src="assets\images\emblems\hvo.png" [attr.width]="hvoEmblemWidth" [attr.height]="hvoEmblemHeight"></a>
+  </div>
+</div>
+
+<!-- The Modal -->
+<dialog id="emailDialog">
+  <button class="btn-borderless closeDialogButton" (click)="closeEmailDialog()">X</button>
+  <div>
+    <h1 class="centeredText" style="margin-block: 0.5em;">Kontakt</h1>
+    <div style="padding: 0px 16px">
+      <form [formGroup]="FormData" (ngSubmit)="sendEmail(FormData.value)">
+        
+          <p class="inputLabel">Email</p>
+          <input type="email" class="input" name="Email" placeholder="Email" formControlName="email">
+   
+         
+          <p  class="inputLabel">Name</p>
+          <input type="text" class="input" name="Fullname" placeholder="Name" formControlName="name">
+       
+          <p class="inputLabel">Nachricht</p>
+          <textarea class="input" style="height: 180px" formControlName="message" name="Message">
+          </textarea>
+          <p>
+            <button type="submit" class="btn btn-primary" [disabled]="!FormData.valid">Submit</button>
+          </p>
+        
+      </form>
+    </div>
+  </div>
+</dialog>
+
+ 
+<router-outlet></router-outlet>
