@@ -1,0 +1,88 @@
+
+.dialogDescription {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 1.2em;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.dialogSkills{
+  width: 100%;
+}
+
+
+@media only screen and (min-width: 1026px) {
+  .dialogPart{
+    flex: 1;
+    margin-right: 2em;
+  }
+}
+
+@media only screen and (max-width: 1026px) {
+  .dialogPart{
+    flex: 1;
+    margin-right: 0em;
+  }
+}
+
+.resumeContentBox{
+  padding: 2em;
+  background-color: var(--main-bg-color);
+  border-bottom: 3px solid var(--main-container-color);
+  border-left: 4px solid var(--main-fg-color);
+
+}
+
+.resumeTextHeader{
+  margin-top: 1em;
+  margin-bottom: 0.6em;
+  font-size: 1.2em;
+  font-weight: 800;
+  line-height: 1.4;
+  color: var(--dialog-text-color-light);
+}
+
+.resumeContentHeader{
+  font-size: 0.9em;
+  font-weight: 600;
+  color: var(--dialog-text-color-light);
+}
+.resumeContentTimeline{
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+  font-size: 0.8em;
+  font-weight: 500;
+  color: var(--dialog-text-color-dark);
+}
+.resumeContentDescriptionCount, .resumeContentDescription{
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+  font-size: 0.8em;
+  font-weight: 500;
+  color: var(--dialog-text-color-dark);
+}
+
+.resumeContentDescriptionCount::before{
+  content: "- "
+}
+
+#keyValueContainer{
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+
+
+.key{
+  color: var(--dialog-text-color-light);
+  flex: 1;
+}
+
+.value{
+  color: var(--dialog-text-color-dark);
+  flex: 3;
+}
+

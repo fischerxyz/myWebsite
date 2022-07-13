@@ -5,9 +5,11 @@ import { MainComponent } from './main/main.component';
 import { PixelventureComponent } from './pixelventure/pixelventure.component';
 
 const routes: Routes = [
-  { path: '*', component: AppComponent },
-  { path: 'main', component: MainComponent },
-  { path: 'pixelventure', component: PixelventureComponent }
+  { path: '',   redirectTo: '/myself', pathMatch: 'full' },
+  { path: '*', redirectTo: '/myself' },
+  { path: 'myself', component: MainComponent },
+  { path: 'pixelventure', component: PixelventureComponent },
+  { path: '**', redirectTo: '/myself' }
 ];
 
 @NgModule({

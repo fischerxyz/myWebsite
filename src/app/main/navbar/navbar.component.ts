@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'navbar',
@@ -10,5 +11,21 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     
+  }
+
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ){}
+  
+  navigateTo(path: string): void {
+    this.router.navigate([path], { relativeTo: this.route });        
+  }
+
+  openDialog(page: string): void {
+    var modal = document.getElementById(page) as any;
+    if(modal != null){
+      modal.showModal();
+    }
   }
 }

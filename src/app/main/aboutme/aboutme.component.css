@@ -1,0 +1,115 @@
+
+.dialogDescription {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#whoAmI{
+  color: var(--main-fg-color);
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+#description{
+  color: var(--dialog-text-color-light);
+  font-size: 1.6em;
+  font-weight: 900;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+#located{
+  color: var(--dialog-text-color-dark);
+  font-size: 1em;
+  padding-bottom: 24px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+}
+@media only screen and (min-width: 1026px) {
+  #textBox{
+    margin: 4em;
+    flex: 1 0;
+  }
+
+  #dialogImage{
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 1026px) {
+  #textBox{
+    margin-top: 2em;
+    flex: 1 0;
+  }
+
+  #dialogImage{
+    width: 1000px;
+  }
+}
+
+#dialogImage{
+  margin: 0 auto;
+  min-width: 30%;
+  aspect-ratio: 5/7;
+  background-image: url(../../../assets/images/other/fischer.jpg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+#keyValueContainer{
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-bottom: 24px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+.keyValue{
+  margin: 1em 1em 0em 0em;
+  min-width: 45%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 1.2em;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.key{
+  color: var(--dialog-text-color-light);
+  flex: 1;
+}
+
+.value{
+  color: var(--dialog-text-color-dark);
+  flex: 3;
+}
+
+.socialContainer{
+  flex-wrap: wrap;
+  display: inline-flex;
+  margin-top: 2em;
+  width: 100%;
+  justify-content: center;
+}
+
+.social {
+  width: 1.5em;
+  height: 1.5em;
+  margin: 0.5em 0.5em;
+  position: relative;
+}
+
+.social:hover{
+  filter: invert(52%) sepia(80%) saturate(1123%) hue-rotate(345deg) brightness(101%) contrast(97%);
+}
+
+.mailTo{
+  text-decoration: none;
+  color: var(--dialog-text-color-dark);
+}
+
+.mailTo:hover{
+  text-decoration: none;
+  color: var(--main-fg-color);
+}
+

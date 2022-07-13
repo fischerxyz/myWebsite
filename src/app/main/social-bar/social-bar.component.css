@@ -1,0 +1,40 @@
+.social {
+  width: 1.5em;
+  height: 1.5em;
+  margin: 0.5em 0.5em;
+  position: relative;
+}
+
+.social:hover {
+  cursor: pointer;
+  filter: invert(52%) sepia(80%) saturate(1123%) hue-rotate(345deg) brightness(101%) contrast(97%);
+}
+
+a {
+  display: block;
+}
+
+
+
+@media only screen and (min-width: 1026px) {
+  .flexContainer{
+    position: absolute;
+    right: 4em;
+    bottom: 6em;
+    height: 7.5em;
+    width: 2.5em;
+    display: grid;  
+  }
+}
+
+@media only screen and (max-width: 1026px) {
+  .flexContainer{
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+    height: 7.5em;
+    width: 2.5em;
+    display: grid;
+  }
+}
+

@@ -11,5 +11,13 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
     
   }
+
+  closeDialog(id: string){
+    var dialog = document.getElementById(id) as any;
+
+    if(dialog != null){
+      dialog.close();
+    }
+  }
   
 }

@@ -3,10 +3,12 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'aboutme',
+  templateUrl: './aboutme.component.html',
+  styleUrls: ['./aboutme.component.css']
 })
-export class AppComponent{
-  title = "Davids-Website";
+export class AboutmeComponent implements OnInit {
+  ngOnInit(): void {
+    
+  }
 }

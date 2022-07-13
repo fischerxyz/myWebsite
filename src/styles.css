@@ -6,9 +6,60 @@ body{
 }
 
 :root {
-    --main-bg-color: #6E6E6E;
-    --main-container-color: #303030;
-    --main-fg-color: #BCFD4C;
-    --main-bg-text-color: #FFFFFF;
-    --main-fg-text-color: #000000;
+    --main-bg-color: #1D2228;
+    --main-container-color: #0e1114;
+    --main-fg-color: #FB8122;
+    --main-fg-color-hover: #e96f12;
+    --main-bg-text-color: #E1E2E2;
+    --main-fg-text-color: #1e1e1e;
+
+    --dialog-text-color-dark: #b3b3b3;
+    --dialog-text-color-light: #ffffff;
 }
+
+::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: rgba(41, 41, 41, 0.9);
+  }
+  ::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(45deg, var(--main-fg-color-hover), var(--main-fg-color));
+    border-radius: 10px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.12) 0 3px 13px 1px;
+  }
+
+.dialogContent{
+    width: 100%;
+}
+
+.dialogHeader{
+    color: var( --dialog-text-color-dark);
+    font-size: 1.1em;
+    margin: 0 auto;
+    text-align: center;
+    padding: 1em 2em;
+    font-weight: bold;
+}
+
+.dialogSubheader{
+    color: var(--dialog-text-color-light);
+    font-size: 2.4em;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+#dialogBox{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.loader{
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+  
