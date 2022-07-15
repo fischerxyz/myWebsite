@@ -1,9 +1,4 @@
-#changeLanguage{
-    position: fixed;
-    left: 0.4em;
-    top: 0.4em;
 
-}
 
 image{
     border-radius: 8px;
@@ -14,43 +9,28 @@ button{
     border: none;
     background: none;
     cursor: pointer;
-
-    margin: 2px 0px;
+    display: flex;
 }
 
 button:hover {
-    transition: all 0.3s;
-    margin: 0px;
     cursor: pointer;
-    border-top: 2px solid var(--main-fg-color);
-    border-bottom: 2px solid var(--main-fg-color);
 }
 
-button:before, button:after
-{
-    position: absolute;
-    opacity: 0;
-    width: 2px;
-    height: 0%;
-    content: '';
-    background: var(--main-fg-color);
-    transition: all 0.3s;
+@media only screen and (min-width: 1026px) {
+    #changeLanguage{
+        position: fixed;
+        left: 0.4em;
+        top: 0.4em;
+    
+    }
 }
 
-button:before
-{
-    left: 0px;
-    top: 0px;
-}
 
-button:after
-{
-    right: 0px;
-    bottom: 0px;
-}
-
-button:hover:before, button:hover:after
-{
-    opacity: 1;
-    height: 100%;
+@media only screen and (max-width: 1026px) {
+    #changeLanguage{
+        position: fixed;
+        left: 0.4em;
+        bottom: 0.4em;
+    
+    }
 }

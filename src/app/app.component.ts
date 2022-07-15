@@ -13,13 +13,21 @@ export class AppComponent{
   language: string = "en";
 
   constructor(public translate: TranslateService){
-    translate.addLangs(['en', 'ge']);
+    translate.addLangs(['en', 'de']);
+
+    var userLang = navigator.language;
+    if(userLang == "de-DE"){
+      this.language = "de";
+    }
+    else{
+      this.language = "en";
+    }
     translate.setDefaultLang(this.language);
   }
 
   changeLanguage(){
     if(this.language == "en"){
-      this.language = "ge";
+      this.language = "de";
   
     }
     else{
