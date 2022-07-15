@@ -1,1 +1,11 @@
 <router-outlet></router-outlet>
+<div id="changeLanguage">
+    <button (click)="changeLanguage()">
+        <div *ngIf="language == 'en'">
+            <img src="../assets/icons/color/england.png" width="36" height="36">
+        </div>
+        <div *ngIf="language == 'ge'">
+            <img src="../assets/icons/color/germany.png"  width="36" height="36">
+        </div>
+    </button>
+</div>

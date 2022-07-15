@@ -9,6 +9,5 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class SkillsComponent implements OnInit {
   ngOnInit(): void {
-    
   }
 }
