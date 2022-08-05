@@ -22,6 +22,10 @@ export class NavbarComponent implements OnInit {
     this.router.navigate([path], { relativeTo: this.route });        
   }
 
+  openPage(path: string): void {
+    window.open(path, "_blank");
+  }
+
   openDialog(page: string): void {
     var modal = document.getElementById(page) as any;
     if(modal != null){
