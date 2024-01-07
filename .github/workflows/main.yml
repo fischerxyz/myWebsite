@@ -1,0 +1,25 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Deploy to Raspberry Pi
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: ng build --configuration production
+  deploy:
+    needs: build
+    runs-on: self-hosted
+    steps:
+    - name: Remove old files
+      run: sudo rm -r /var/www/david-fischer
+    - name: Copy files
+      run: sudo cp -r -f /etc/actions-runner/_work/myWebsite/myWebsite/dist/davids-website/. /var/www/david-fischer
